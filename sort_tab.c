@@ -13,6 +13,8 @@ int     *sort_tab(int *a, int argc)
     if (b == NULL)
         return (NULL);
     c = init_c(a, argc);
+    if (c == NULL)
+        return (NULL);
     // ---------- print c ------------------------------
     printf("Pile C = ");
     for (int ju = 0;ju < argc -1 ;ju++)//TEST
