@@ -9,7 +9,7 @@ int main(int argc, char **argv)
     if(check_error(argc, argv) == -1)
         return (write(1,"Error\n",6), 0);
     a = convert_tab_int(argc, argv);
-    a = sort_tab(a, argc);
+    a = init_sort_tab(a, argc);
     //print a
     printf("Pile A = ");
     for (int i = 0;i < argc - 1;i++)

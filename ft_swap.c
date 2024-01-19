@@ -1,10 +1,10 @@
 #include "push_swap.h"
 
-void    sa(int *a)
+void    sa(int *a, count *pos)
 {
     int temp;
 
-    if (ft_strlen_int(a) >= 2)
+    if (pos->count_a >= 2)
     {
         temp = a[0];
         a[0] = a[1];
@@ -12,11 +12,11 @@ void    sa(int *a)
     }
 }
 
-void    sb(int *b)
+void    sb(int *b, count *pos)
 {
     int     temp;
     
-    if (ft_strlen_int(b) >= 2)
+    if (pos->count_b >= 2)
     {
         temp = b[0];
         b[0] = b[1];
@@ -24,8 +24,8 @@ void    sb(int *b)
     }
 }
 
-void    ss(int *a, int *b)
+void    ss(int *a, int *b, count *pos)
 {
-    sa(a);
-    sb(b);
+    sa(a, pos);
+    sb(b, pos);
 }

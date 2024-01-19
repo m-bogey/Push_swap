@@ -1,10 +1,10 @@
 #include "push_swap.h"
 
-static void    first_step(int *a, int *b, int *c);
+static void    sort_tab(int *a, int *b, int *c, int argc);
 static int     *init_c(int *a, int argc);
 static int  check_lower_median(int *c, int nb, int half_len_a);
 
-int     *sort_tab(int *a, int argc)
+int     *init_sort_tab(int *a, int argc)
 {
     int     *b;
     int     *c;
@@ -21,7 +21,7 @@ int     *sort_tab(int *a, int argc)
         printf("[%d] ",c[ju]);//TEST
     printf("\n");
     //--------------------------------------------------
-    first_step(a, b, c);
+    sort_tab(a, b, c, argc);
     // ---------- print b ------------------------------
     printf("Pile B = ");
      for (int j = 0;j < argc -1 ;j++)//TEST
@@ -33,20 +33,25 @@ int     *sort_tab(int *a, int argc)
     return (a);
 }
 
-static void    first_step(int *a, int *b, int *c)
+static void    sort_tab(int *a, int *b, int *c, int argc)
 {
     int     half_len_a;
 
-    half_len_a = ft_strlen_int(a) / 2;
+	count	pos;
+
+	pos.count_a = argc - 1;
+	pos.count_b = 0;
+    half_len_a = pos.count_a / 2;
     //printf("%d",check_lower_median(c,a[1],half_len_a));
     while (ft_strlen_int(b) != half_len_a)
     {
         if (check_lower_median(c, a[0], half_len_a) == 1)
             {
-                pb(a, b);
+                pb(a, b, &pos);
+				rra(a, &pos);
                 //ft trie b
             }
-        ra(a);
+        ra(a, &pos);
     }
     //printf("yy %d %d yy\n", half_len_a, ft_strlen_int(b));
 }

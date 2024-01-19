@@ -1,11 +1,11 @@
 #include "push_swap.h"
 
-void    rra(int *a)
+void    rra(int *a, count *pos)
 {
     size_t  len;
     int     temp;
 
-    len = ft_strlen_int(a) - 1;
+    len = pos->count_a - 1;
     temp = a[len];
     while (len > 0)
     {
@@ -15,12 +15,12 @@ void    rra(int *a)
     a[0] = temp;
 }
 
-void    rrb(int *b)
+void    rrb(int *b, count *pos)
 {
     size_t  len;
     int     temp;
 
-    len = ft_strlen_int(b) - 1;
+    len = pos->count_b - 1;
     temp = b[len];
     while (len > 0)
     {
@@ -30,8 +30,8 @@ void    rrb(int *b)
     b[0] = temp;
 }
 
-void    rrr(int *a, int *b)
+void    rrr(int *a, int *b, count *pos)
 {
-    rra(a);
-    rrb(b);
+    rra(a, pos);
+    rrb(b, pos);
 }

@@ -92,4 +92,5 @@ static int      ft_is_doublon(char **argv, char *str, int argc, int i)
              return (-1);
         index++;
     }
+	return (0);
 }

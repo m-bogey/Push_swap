@@ -1,49 +1,49 @@
 #include "push_swap.h"
 
-static void     move_down(int *tab);
-static void     move_up(int *tab);
+static void     move_down(int *tab, size_t compt);
+static void     move_up(int *tab, size_t compt);
 
-void    pa(int *a, int *b)
+void    pa(int *a, int *b, count *pos)
 {
-    if (b[0] != 0)
+    if (pos->count_b > 0)
     {
-        move_down(a);
+        move_down(a, pos->count_a);
         a[0] = b[0];
-        move_up(b);
+        move_up(b, pos->count_b);
+		pos->count_a++;
+		pos->count_b--;
     }
 }
 
-void    pb(int *a, int *b)
+void    pb(int *a, int *b, count *pos)
 {
-    if (a[0] != 0)
+    if (pos->count_a > 0)
     {
-        move_down(b);
+        move_down(b, pos->count_b);
         b[0] = a[0];
-        move_up(a);
+        move_up(a, pos->count_a);
+		pos->count_a--;
+		pos->count_b++;
     }
 }
 
-static void     move_down(int *tab)
+static void     move_down(int *tab, size_t compt)
 {
-    size_t  len;
-
-    len = ft_strlen_int(tab);
-    while (len > 0)
+    while (compt > 0)
     {
-        tab[len] = tab[len - 1];
-        len--;
+        tab[compt] = tab[compt - 1];
+        compt--;
     }
 }
 
-static void     move_up(int *tab)
+static void     move_up(int *tab, size_t compt)
 {
     size_t  i;
 
     i = 0;
-    while (tab[i])
+    while (i < compt)
     {
         tab[i] = tab[i + 1];
         i++;
     }
-
 }
