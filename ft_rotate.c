@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void    ra(int *a, count *pos)
+int    ra(int *a, t_count *pos)
 {
     int     temp;
     size_t  i;
@@ -13,9 +13,12 @@ void    ra(int *a, count *pos)
         i++;
     }
     a[i - 1] = temp;
+	if(write(1,"ra\n", 3) == -1)
+		return (-1);
+	return (0);
 }
 
-void    rb(int *b, count *pos)
+int    rb(int *b, t_count *pos)
 {
     int     temp;
     size_t  i;
@@ -28,10 +31,33 @@ void    rb(int *b, count *pos)
         i++;
     }
     b[i - 1] = temp;
+	if(write(1,"rb\n", 3) == -1)
+		return (-1);
+	return (0);
 }
 
-void    rr(int *a, int *b, count *pos)
+int    rr(int *a, int *b, t_count *pos)
 {
-    ra(a, pos);
-    rb(b, pos);
+	int     temp;
+	size_t  i;
+
+	temp = a[0];
+	i = 0;
+	while (i < pos->count_a)
+	{
+		a[i] = a[i + 1];
+		i++;
+	}
+	a[i - 1] = temp;
+	temp = b[0];
+	i = 0;
+	while (i < pos->count_b)
+	{
+		b[i] = b[i + 1];
+		i++;
+	}
+	b[i - 1] = temp;
+	if(write(1,"rr\n", 3) == -1)
+		return (-1);
+	return (0);
 }

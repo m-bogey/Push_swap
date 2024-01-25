@@ -2,7 +2,6 @@
 
 static void    sort_tab(int *a, int *b, int *c, int argc);
 static int     *init_c(int *a, int argc);
-static int  check_lower_median(int *c, int nb, int half_len_a);
 
 int     *init_sort_tab(int *a, int argc)
 {
@@ -35,25 +34,7 @@ int     *init_sort_tab(int *a, int argc)
 
 static void    sort_tab(int *a, int *b, int *c, int argc)
 {
-    int     half_len_a;
-
-	count	pos;
-
-	pos.count_a = argc - 1;
-	pos.count_b = 0;
-    half_len_a = pos.count_a / 2;
-    //printf("%d",check_lower_median(c,a[1],half_len_a));
-    while (ft_strlen_int(b) != half_len_a)
-    {
-        if (check_lower_median(c, a[0], half_len_a) == 1)
-            {
-                pb(a, b, &pos);
-				rra(a, &pos);
-                //ft trie b
-            }
-        ra(a, &pos);
-    }
-    //printf("yy %d %d yy\n", half_len_a, ft_strlen_int(b));
+	first_step(a, b, c, argc);
 }
 
 static int    *init_c(int *a, int argc)
@@ -67,17 +48,17 @@ static int    *init_c(int *a, int argc)
     c = malloc(sizeof(int) * argc);
     if (c == NULL)
         return (NULL);
-    while (a[i])
+    while (i < argc - 1)
     {
         c[i] = a[i];
         i++;
     }
     c[i] = 0;
     i = 0;
-    while (c[i])
+    while (i < argc - 1)
     {
         j = 0;
-        while (c[j])
+        while (j < argc - 1)
         {
             if ((c[j] < c[i]) && j > i)
             {
@@ -91,18 +72,4 @@ static int    *init_c(int *a, int argc)
         i++;
     }
     return (c);
-}
-
-static int  check_lower_median(int *c, int nb, int half_len_a)
-{
-    int     i;
-
-    i = 0;
-    while (i < half_len_a)
-    {
-        if (nb == c[i])
-            return (1);
-        i++;
-    }
-    return (0);
 }

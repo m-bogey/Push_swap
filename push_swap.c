@@ -14,7 +14,6 @@ int main(int argc, char **argv)
     printf("Pile A = ");
     for (int i = 0;i < argc - 1;i++)
         printf("[%d] ",a[i]);
-    //TODO: faire les fonctions de deplacements pile a pile b
     //TODO:faire le programme de trie
     free(a);
     return (0);

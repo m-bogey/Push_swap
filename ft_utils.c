@@ -10,16 +10,6 @@ size_t   ft_strlen(char *str)
     return (i);
 }
 
-size_t   ft_strlen_int(int *str)
-{
-    size_t  i;
-
-    i = 0;
-    while (str[i])
-        i++;
-    return (i);
-}
-
 int  ft_strcmp(char *s1, char *s2)
 {
 	size_t	i;

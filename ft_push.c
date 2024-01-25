@@ -3,7 +3,7 @@
 static void     move_down(int *tab, size_t compt);
 static void     move_up(int *tab, size_t compt);
 
-void    pa(int *a, int *b, count *pos)
+int    pa(int *a, int *b, t_count *pos)
 {
     if (pos->count_b > 0)
     {
@@ -12,10 +12,13 @@ void    pa(int *a, int *b, count *pos)
         move_up(b, pos->count_b);
 		pos->count_a++;
 		pos->count_b--;
+		if(write(1,"pa\n", 3) == -1)
+			return (-1);
     }
+	return (0);
 }
 
-void    pb(int *a, int *b, count *pos)
+int    pb(int *a, int *b, t_count *pos)
 {
     if (pos->count_a > 0)
     {
@@ -24,7 +27,10 @@ void    pb(int *a, int *b, count *pos)
         move_up(a, pos->count_a);
 		pos->count_a--;
 		pos->count_b++;
-    }
+		if(write(1,"pb\n", 3) == -1)
+			return (-1);
+	}
+	return (0);
 }
 
 static void     move_down(int *tab, size_t compt)

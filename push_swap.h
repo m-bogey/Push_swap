@@ -8,28 +8,28 @@
 #define TESTINTMIN "-2147483648"
 #define TESTINTMAX "2147483647"
 
-typedef struct count
+typedef struct s_count
 {
 	size_t		count_a;
 	size_t		count_b;
-}				count;
+}				t_count;
 
-size_t      ft_strlen(char *str);
-size_t      ft_strlen_int(int *str);
-int         ft_strcmp(char *s1, char *s2);
-int         check_error(int argc, char **argv);
-int         *convert_tab_int(int argc,char **argv);
-int         *init_sort_tab(int *a, int argc);
-void        sa(int *a, count *pos);
-void        sb(int *b, count *pos);
-void        ss(int *a, int *b, count *pos);
-void        pa(int *a, int *b, count *pos);
-void        pb(int *a, int *b, count *pos);
-void        ra(int *a, count *pos);
-void        rb(int *b, count *pos);
-void        rr(int *a, int *b, count *pos);
-void        rra(int *a, count *pos);
-void        rrb(int *b, count *pos);
-void        rrr(int *a, int *b, count *pos);
+size_t		ft_strlen(char *str);
+int			ft_strcmp(char *s1, char *s2);
+int			check_error(int argc, char **argv);
+int			*convert_tab_int(int argc,char **argv);
+int			*init_sort_tab(int *a, int argc);
+int			sa(int *a, t_count *pos);
+int			sb(int *b, t_count *pos);
+int			ss(int *a, int *b, t_count *pos);
+int			pa(int *a, int *b, t_count *pos);
+int			pb(int *a, int *b, t_count *pos);
+int			ra(int *a, t_count *pos);
+int			rb(int *b, t_count *pos);
+int			rr(int *a, int *b, t_count *pos);
+int			rra(int *a, t_count *pos);
+int			rrb(int *b, t_count *pos);
+int			rrr(int *a, int *b, t_count *pos);
+int			first_step(int *a, int *b, int *c, int argc);
 
 #endif
