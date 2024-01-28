@@ -9,9 +9,10 @@ int    sa(int *a, t_count *pos)
         temp = a[0];
         a[0] = a[1];
         a[1] = temp;
-    }
-	if(write(1,"sa\n", 3) == -1)
-		return (-1);
+		if(write(1,"sa\n", 3) == -1)
+			return (-1);
+		pos->compteur++;
+	}
 	return (0);
 }
 
@@ -24,9 +25,10 @@ int    sb(int *b, t_count *pos)
         temp = b[0];
         b[0] = b[1];
         b[1] = temp;
-    }
 	if(write(1,"sb\n", 3) == -1)
 		return (-1);
+		pos->compteur++;
+	}	
 	return (0);
 }
 
@@ -43,6 +45,7 @@ int    ss(int *a, int *b, t_count *pos)
 		b[1] = temp;
 		if (write(1, "ss\n", 3) == -1)
 			return (-1);
+		pos->compteur++;
 	}
 	return (0);
 }

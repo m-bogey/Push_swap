@@ -34,7 +34,15 @@ int     *init_sort_tab(int *a, int argc)
 
 static void    sort_tab(int *a, int *b, int *c, int argc)
 {
-	first_step(a, b, c, argc);
+    t_count		pos;
+
+	pos.count_a = argc - 1;
+	pos.count_b = 0;
+	pos.compteur = 0;
+	first_step(a, b, c, &pos);
+    second_step(a, b, c, &pos);
+
+    printf("\n--- compteur = %zu ---\n", pos.compteur);
 }
 
 static int    *init_c(int *a, int argc)

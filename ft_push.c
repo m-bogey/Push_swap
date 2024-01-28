@@ -14,6 +14,7 @@ int    pa(int *a, int *b, t_count *pos)
 		pos->count_b--;
 		if(write(1,"pa\n", 3) == -1)
 			return (-1);
+        pos->compteur++;
     }
 	return (0);
 }
@@ -29,6 +30,7 @@ int    pb(int *a, int *b, t_count *pos)
 		pos->count_b++;
 		if(write(1,"pb\n", 3) == -1)
 			return (-1);
+        pos->compteur++;
 	}
 	return (0);
 }

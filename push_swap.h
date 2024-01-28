@@ -12,6 +12,7 @@ typedef struct s_count
 {
 	size_t		count_a;
 	size_t		count_b;
+	size_t		compteur;
 }				t_count;
 
 size_t		ft_strlen(char *str);
@@ -30,6 +31,7 @@ int			rr(int *a, int *b, t_count *pos);
 int			rra(int *a, t_count *pos);
 int			rrb(int *b, t_count *pos);
 int			rrr(int *a, int *b, t_count *pos);
-int			first_step(int *a, int *b, int *c, int argc);
+int			first_step(int *a, int *b, int *c, t_count *pos);
+int 		second_step(int *a, int *b, int *c, t_count *pos);
 
 #endif

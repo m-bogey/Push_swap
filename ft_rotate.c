@@ -15,6 +15,7 @@ int    ra(int *a, t_count *pos)
     a[i - 1] = temp;
 	if(write(1,"ra\n", 3) == -1)
 		return (-1);
+	pos->compteur++;
 	return (0);
 }
 
@@ -33,6 +34,7 @@ int    rb(int *b, t_count *pos)
     b[i - 1] = temp;
 	if(write(1,"rb\n", 3) == -1)
 		return (-1);
+	pos->compteur++;
 	return (0);
 }
 
@@ -59,5 +61,6 @@ int    rr(int *a, int *b, t_count *pos)
 	b[i - 1] = temp;
 	if(write(1,"rr\n", 3) == -1)
 		return (-1);
+	pos->compteur++;
 	return (0);
 }
