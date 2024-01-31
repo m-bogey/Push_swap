@@ -15,17 +15,17 @@ int     *init_sort_tab(int *a, int argc)
     if (c == NULL)
         return (NULL);
     // ---------- print c ------------------------------
-    printf("Pile C = ");
-    for (int ju = 0;ju < argc -1 ;ju++)//TEST
-        printf("[%d] ",c[ju]);//TEST
-    printf("\n");
+    // printf("Pile C = ");
+    // for (int ju = 0;ju < argc -1 ;ju++)//TEST
+    //     printf("[%d] ",c[ju]);//TEST
+    // printf("\n");
     //--------------------------------------------------
     sort_tab(a, b, c, argc);
     // ---------- print b ------------------------------
-    printf("Pile B = ");
-     for (int j = 0;j < argc -1 ;j++)//TEST
-         printf("[%d] ",b[j]);//TEST
-    printf("\n");
+    // printf("Pile B = ");
+    //  for (int j = 0;j < argc -1 ;j++)//TEST
+    //      printf("[%d] ",b[j]);//TEST
+    // printf("\n");
     //---------------------------------------------------
     free(b);
     free(c);
@@ -40,7 +40,7 @@ static void    sort_tab(int *a, int *b, int *c, int argc)
 	pos.count_b = 0;
 	pos.compteur = 0;
 	first_step(a, b, c, &pos);
-    second_step(a, b, c, &pos);
+   	second_step(a, b, c, &pos);
 
     printf("\n--- compteur = %zu ---\n", pos.compteur);
 }

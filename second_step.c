@@ -1,32 +1,31 @@
 #include "push_swap.h"
 
-int second_step(int *a, int *b, int *c, t_count *pos)
+int found_one(int b, int *a, t_count *pos);
+int	found_lower(int b, int *a, t_count *pos);
+
+int second_step(int *a, int *b, int *tab_index, t_count *pos)
 {
-    int i;
+    int     index_dif;
+	int p = 0;
 
-    i = 0;
+    index_dif = found_one(b[0], tab_index, pos);
+printf("index dif = %d", index_dif);
 
-    while(b[0] != c[pos->count_b - 1])
-    {
-        rb(b, pos);
-    }
-    // ---------- print b ------------------------------
+	while(p < 100)
+	{
+    	if(b[0] < a[0] && index_dif == 1)
+        	pa(a, b, pos);
+	p++;
+	}
+
+	  printf("\n");
+     printf("Pile A = ");
+      for (int j = 0;j < pos->count_a ;j++)//TEST
+          printf("[%d] ",a[j]);//TEST
+		  	 printf("\n");
     printf("Pile B = ");
      for (int j = 0;j < pos->count_b ;j++)//TEST
          printf("[%d] ",b[j]);//TEST
-    printf("\n");
-    //---------------------------------------------------
 
-    // ---------- print a ------------------------------
-    printf("Pile A2 = ");
-     for (int m = 0;m < pos->count_a ;m++)//TEST
-         printf("[%d] ",a[m]);//TEST
-    printf("\n");
-    //---------------------------------------------------
-
-    while(pos->count_b != 0)
-    {
-        pa(a, b, pos);
-    }
     return (0);
 }

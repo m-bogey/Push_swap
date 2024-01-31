@@ -1,6 +1,6 @@
 
 NAME = push_swap
-CFLAGS = -Wall -Wextra #Werror
+CFLAGS = #-Wall -Wextra -Werror
 CPPFLAGS= -I libft/src # -I : include
 CC = cc
 SRC = \
@@ -13,27 +13,27 @@ LIBFT = libft/libft.a
 all : $(NAME)
 
 %.o : %.c push_swap.h
-    $(CC) $(CFLAGS) $(CPPFLAGS)-o $@ -c $<
+	$(CC) $(CFLAGS) $(CPPFLAGS)-o $@ -c $<
 
 re: fclean all
 
 fclean: clean
-    rm -f $(NAME)
-    make fclean -C libft #appel le make de libft
+	rm -f $(NAME)
+	make fclean -C libft #appel le make de libft
 
 clean :
-    rm -rf $(OBJ)
+	rm -rf $(OBJ)
 
 sanitize:
-    make CFLAGS="-Wall -Wextra -Werror -g3 -fsanitize=address"
+	make CFLAGS="-Wall -Wextra -Werror -g3 -fsanitize=address"
 
 FORCE :
 
 $(LIBFT) : FORCE #commande vide pour qu'il execute a chaque fois make
-    make -C libft # -C : make dans un autre dossier.
+	make -C libft # -C : make dans un autre dossier.
 
 $(NAME) : $(LIBFT) $(OBJ)
-    $(CC) $(CFLAGS) $(CPPFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 
 .PHONY: all clean fclean re FORCE
 

@@ -11,9 +11,9 @@ int main(int argc, char **argv)
     a = convert_tab_int(argc, argv);
     a = init_sort_tab(a, argc);
     //print a
-    printf("Pile A = ");
-    for (int i = 0;i < argc - 1;i++)
-        printf("[%d] ",a[i]);
+    // printf("Pile A = ");
+    // for (int i = 0;i < argc - 1;i++)
+    //     printf("[%d] ",a[i]);
     //TODO:faire le programme de trie
     free(a);
     return (0);

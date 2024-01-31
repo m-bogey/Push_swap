@@ -18,7 +18,7 @@ typedef struct s_count
 size_t		ft_strlen(char *str);
 int			ft_strcmp(char *s1, char *s2);
 int			check_error(int argc, char **argv);
-int			*convert_tab_int(int argc,char **argv);
+int			*convert_tab_int(int argc, char **argv);
 int			*init_sort_tab(int *a, int argc);
 int			sa(int *a, t_count *pos);
 int			sb(int *b, t_count *pos);
