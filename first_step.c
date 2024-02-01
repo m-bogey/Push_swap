@@ -19,8 +19,6 @@ int    first_step(int *a, int *b, int *tab_index, t_count *pos)
 	num = 0;
 	chunks = 0.000000053 * (pos->count_a * pos->count_a) + 0.03 * (pos->count_a) + 14.5;
 	len_a_less_three = pos->count_a - 3;
-	printf("%zu %zu %zu", pos->count_a, pos->count_b, len_a_less_three);
-
 	while(pos->count_b <= len_a_less_three && pos->count_a > 3)
 	{
 		if(a[0] <= tab_index[num] && a[0] < tab_index[len_a_less_three])
