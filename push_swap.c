@@ -6,7 +6,7 @@
 /*   By: mbogey <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 16:39:13 by mbogey            #+#    #+#             */
-/*   Updated: 2024/02/02 16:39:15 by mbogey           ###   ########.fr       */
+/*   Updated: 2024/02/07 15:50:07 by mbogey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@ int	main(int argc, char **argv)
 	if (argc <= 1)
 		return (0);
 	if (check_error(argc, argv) == -1)
-		return (write(1, "Error\n", 6), 0);
+		return (write(2, "Error\n", 6), 0);
 	a = convert_tab_int(argc, argv);
 	if (a == NULL)
 		return (1);
 	a = init_sort_tab(a, argc);
+	if (a == NULL)
+		return (1);
 	free(a);
 	return (0);
 }
