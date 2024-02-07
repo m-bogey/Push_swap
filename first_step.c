@@ -13,6 +13,7 @@
 #include "push_swap.h"
 
 static void		swap_last_a(int *a, int *b, int *c, t_count *pos);
+static void		ra_or_rra(int *a, int *b, int *tab_index, t_count *pos);
 
 int	first_step(int *a, int *b, int *c, t_count *pos)
 {
@@ -37,7 +38,7 @@ int	first_step(int *a, int *b, int *c, t_count *pos)
 			n++;
 		}
 		else
-			ra(a, b, c, pos);
+			ra_or_rra(a, b, c, pos);
 	}
 	swap_last_a(a, b, c, pos);
 	return (0);
@@ -69,4 +70,12 @@ static void	swap_last_a(int *a, int *b, int *tab_index, t_count *pos)
 			rra(a, b, tab_index, pos);
 		}
 	}
+}
+
+static void	ra_or_rra(int *a, int *b, int *tab_index, t_count *pos)
+{
+	if (tab_index[0] == a[pos->count_a - 1])
+		rra(a, b, tab_index, pos);
+	else
+		ra(a, b, tab_index, pos);
 }
